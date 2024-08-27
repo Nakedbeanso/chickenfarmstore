@@ -1,0 +1,265 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium';
+}
+
+body {
+    background-color: #000814;
+    min-height: 200vh;
+}
+
+
+header, .home, .listproduct {
+    transition: filter 0.3s ease;
+}
+
+
+body.blur header,
+body.blur .home,
+body.blur .listproduct {
+    filter: blur(5px);
+}
+
+.blur .listproduct.active{
+    opacity: 0;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+    width: 380px;
+    padding: 20px 30px;
+    background-color: #ffd60a;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.popup.active {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    background: #888;
+    color: #eee;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.popup .form h2 {
+    text-align: center;
+    color: #222;
+    margin: 10px 0 20px;
+    font-size: 25px;
+}
+
+.popup .form .form-element {
+    margin: 15px 0;
+}
+
+.popup .form .form-element label {
+    font-size: 14px;
+    color: #222;
+}
+
+.popup .form .form-element input[type="text"],
+.popup .form .form-element input[type="password"] {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.popup .form .form-element input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.popup .form .form-element button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: #222;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.popup .form .form-element a {
+    display: block;
+    text-align: right;
+    font-size: 15px;
+    color: #000814;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background-color: #001d3d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 20px;
+    color: #ffd60a;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.img1 {
+    width: 40px;
+    height: 40px;
+    transform: translateY(-7px);
+}
+
+.logo1 {
+    display: flex;
+    gap: 5px;
+    margin-left: -50px;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 17px;
+    color: #ffd60a;
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ffc300;
+    transition: .3s;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: url(Untitled.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content {
+    max-width: 50rem;
+}
+
+.home .content h3 {
+    font-size: 5rem;
+    color: #000814;
+    margin-left: 80px;
+}
+
+.home .content span {
+    font-size: 2rem;
+    color: #001d3d;
+    padding: 1rem 0;
+    line-height: 1.5;
+    margin-left: 80px;
+}
+
+.home .content p {
+    font-size: 1rem;
+    color: #001d3d;
+    padding: 1rem 0;
+    line-height: 1.5;
+    margin-left: 80px;
+}
+
+.img2 {
+    transform: translateX(160px);
+}
+
+.listproduct .item img {
+    width: 120px;
+    filter: drop-shadow(0 50px 35px #000814);
+}
+
+.listproduct {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.listproduct .item {
+    background-color: #001d3d;
+    padding: 20px;
+    border-radius: 20px;
+    width: 250px;
+}
+
+.listproduct .item h2 {
+    font-weight: 500;
+    font-size: large;
+    color: #ffc300;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.listproduct .item .price {
+    letter-spacing: 5px;
+    font-size: small;
+    text-align: center;
+    margin-top: 10px;
+    color: #ffc300;
+}
+
+.listproduct .item button {
+    background-color: #ffd60a;
+    color: #eee;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.item {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
